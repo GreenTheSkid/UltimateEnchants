@@ -23,7 +23,7 @@ public class addEnchant implements CommandExecutor {
                 }
 
                 if (args.length >= 2) {
-                    if (args[1].equals(enchantHandler.getInstance().enchants.containsKey(args[1])));
+
                 }
             }
         }
