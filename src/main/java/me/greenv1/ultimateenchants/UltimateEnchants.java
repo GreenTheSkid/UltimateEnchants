@@ -3,6 +3,8 @@ package me.greenv1.ultimateenchants;
 
 import java.util.ArrayList;
 
+import com.sun.corba.se.impl.activation.CommandHandler;
+import me.greenv1.ultimateenchants.commands.addEnchant;
 import me.greenv1.ultimateenchants.enchants.enchantHandler;
 import me.greenv1.ultimateenchants.enchants.fairFight;
 import org.bukkit.Bukkit;
@@ -21,8 +23,9 @@ public final class UltimateEnchants extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        enchantHandler.getInstance().addEnchant(new fairFight());
+        enchantHandler.getInstance().enchants.put("fairfight", new fairFight());
         Bukkit.getPluginManager().registerEvents(this, this);
+        getCommand("addenchant").setExecutor(new addEnchant());
 
         if (fairFight.register()) {
             System.out.println("Registering enchantment");

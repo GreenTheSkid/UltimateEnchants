@@ -8,6 +8,9 @@ import me.greenv1.ultimateenchants.enchants.enchantHandler;
 import org.bukkit.enchantments.Enchantment;
 
 public class addEnchant implements CommandExecutor {
+
+
+
     @Override
     public boolean onCommand(CommandSender p, Command cmd, String label, String[] args) {
 
@@ -23,8 +26,12 @@ public class addEnchant implements CommandExecutor {
                 }
 
                 if (args.length >= 2) {
-
+                    if (enchantHandler.getInstance().enchants.containsKey(args[1])) {
+                        Enchantment ench = enchantHandler.getInstance().enchants.get(args[1]);
+                        p.getServer().getPlayer(p.getName()).getItemInHand().addUnsafeEnchantment(ench, 1);
+                    } else {p.sendMessage(ChatColor.RED + "Please enter a valid enchant!");}
                 }
+
             }
         }
 
