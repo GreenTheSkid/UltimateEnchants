@@ -1,0 +1,9 @@
+name: UltimateEnchants
+version: '${project.version}'
+main: me.greenv1.ultimateenchants.UltimateEnchants
+authors: [ GreenV1 ]
+commands:
+  addEnchant:
+    usage: /<command>
+    description: Adds a command!
+    aliases:
